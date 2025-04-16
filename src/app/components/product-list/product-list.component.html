@@ -1,0 +1,8 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+  <div *ngFor="let product of products" class="border rounded shadow hover:shadow-md p-4">
+    <img [src]="product.image" alt="{{ product.title }}" class="h-40 object-contain mx-auto mb-4">
+    <h3 class="text-sm font-semibold truncate">{{ product.title }}</h3>
+    <p class="text-blue-600 font-bold mb-2">\${{ product.price }}</p>
+    <a [routerLink]="['/product', product.id]" class="text-sm text-white bg-blue-600 px-3 py-1 rounded hover:bg-blue-700">View</a>
+  </div>
+</div>
