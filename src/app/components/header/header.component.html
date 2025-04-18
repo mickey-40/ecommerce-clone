@@ -1,5 +1,11 @@
-<p>header works!</p>
-<nav>
-  <a routerLink="/">Home</a> |
-  <a routerLink="/cart">Cart</a>
+<nav class="bg-blue-600 text-white p-4 flex justify-between items-center shadow">
+  <a routerLink="/" class="text-xl font-bold hover:text-gray-200">🛍️ ShopClone</a>
+
+  <div class="space-x-6">
+    <a routerLink="/" routerLinkActive="underline" class="hover:text-gray-200">Home</a>
+    <a routerLink="/cart" routerLinkActive="underline" class="hover:text-gray-200">
+      Cart <span *ngIf="cartCount > 0" class="bg-white text-blue-600 font-bold px-2 py-0.5 rounded text-sm ml-1">{{ cartCount }}</span>
+    </a>
+    
+  </div>
 </nav>

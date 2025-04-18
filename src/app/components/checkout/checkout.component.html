@@ -1,0 +1,29 @@
+<div class="p-6 max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold mb-6">💳 Checkout</h2>
+
+  <div *ngIf="!purchaseComplete">
+
+    <div *ngFor="let item of cartItems" class="border-b py-2">
+      <p class="font-semibold">{{ item.title }}</p>
+      <p class="text-sm text-gray-600">${{ item.price }}</p>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-xl font-bold">Total: ${{ total.toFixed(2) }}</h3>
+    </div>
+
+    <button 
+      (click)="placeOrder()" 
+      class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+    >
+      Place Order
+    </button>
+
+  </div>
+
+  <div *ngIf="purchaseComplete" class="text-center mt-10">
+    <h3 class="text-2xl font-bold text-green-700">🎉 Thank you for your purchase!</h3>
+    <p class="mt-2">Your fake order has been placed successfully.</p>
+    <a routerLink="/" class="text-blue-600 underline mt-4 block">Continue Shopping</a>
+  </div>
+</div>

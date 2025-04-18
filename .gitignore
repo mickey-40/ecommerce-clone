@@ -68,3 +68,6 @@ yarn-error.log*
 
 # Optional: coverage reports
 /coverage
+
+# IDE/editor configs
+.vscode/
