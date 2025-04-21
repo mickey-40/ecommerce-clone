@@ -8,16 +8,20 @@ import { ProductService } from '../../services/product.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
+
+
 export class ProductListComponent implements OnInit {
   products: any[] = [];
+  loading = true;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((data) => {
       this.products = data;
+      this.loading = false;
     });
   }
 }
